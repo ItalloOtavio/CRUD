@@ -20,7 +20,7 @@ class Program
         Pessoa p = new Pessoa();
         p.nome = nome;
         p.idade = idade;
-        p.id = idade;
+        p.id = id;
 
         pessoas[quantidadePessoas] = p;
 
