@@ -1,4 +1,5 @@
-﻿namespace CRUD;
+﻿
+namespace CRUD;
 
 class Program
 {
@@ -9,6 +10,8 @@ class Program
 
     static void Cadastrar()
     {
+        Console.WriteLine("Digite o id da Pessoa:");
+        int id = int.Parse(Console.ReadLine()!);
         Console.WriteLine("Digite o nome:");
         string nome = Console.ReadLine()!;
         Console.WriteLine("Digite a Idade:");
@@ -17,6 +20,7 @@ class Program
         Pessoa p = new Pessoa();
         p.nome = nome;
         p.idade = idade;
+        p.id = idade;
 
         pessoas[quantidadePessoas] = p;
 
@@ -38,7 +42,7 @@ class Program
             for (int i = 0; i < quantidadePessoas; i++)
             {
                 Pessoa p = pessoas[i];
-                Console.WriteLine($"Nome:{p.nome} Idade: {p.idade}");
+                Console.WriteLine($"ID:{p.id}Nome:{p.nome} Idade: {p.idade}");
             }
         }  
     }
