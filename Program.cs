@@ -42,7 +42,7 @@ class Program
             for (int i = 0; i < quantidadePessoas; i++)
             {
                 Pessoa p = pessoas[i];
-                Console.WriteLine($"ID:{p.id}Nome:{p.nome} Idade: {p.idade}");
+                Console.WriteLine($"ID:{p.id} Nome:{p.nome} Idade: {p.idade}");
             }
         }
     }
@@ -110,31 +110,40 @@ class Program
     static void Main(string[] args)
     {
         int op;
-        Console.WriteLine("====CRUD====");
-        Console.WriteLine("1 - Cadastrar");
-        Console.WriteLine("2 - Listar");
-        Console.WriteLine("3 - Atualizar");
-        Console.WriteLine("4 - Remover");
-        Console.WriteLine("0 - Sair");
-        op = int.Parse(Console.ReadLine()!);
-
-        switch (op)
+        while (true)
         {
-            case 1:
-                Cadastrar();
-                break;
-            case 2:
-                Listar();
-                break;
-            case 3:
-                Atualizar();
-                break;
-            case 4:
-                Remover();
-                break;
-            case 0:
-                break;
+            Console.WriteLine("====CRUD====");
+            Console.WriteLine("1 - Cadastrar");
+            Console.WriteLine("2 - Listar");
+            Console.WriteLine("3 - Atualizar");
+            Console.WriteLine("4 - Remover");
+            Console.WriteLine("0 - Sair");
+            op = int.Parse(Console.ReadLine()!);
 
+            if (op == 0)
+            {
+                break;
+            }
+
+            switch (op)
+            {
+                case 1:
+                    Cadastrar();
+                    break;
+                case 2:
+                    Listar();
+                    break;
+                case 3:
+                    Atualizar();
+                    break;
+                case 4:
+                    Remover();
+                    break;
+                default:
+                    Console.WriteLine("Opção Invalida");
+                    break;
+
+            }
         }
     }
 }
