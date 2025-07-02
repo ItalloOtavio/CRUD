@@ -68,6 +68,8 @@ class Program
             return;
         }
 
+        Console.WriteLine("Digite o novo id");
+        pessoas[indice].id = int.Parse(Console.ReadLine()!);
         Console.WriteLine("Digite o novo nome:");
         pessoas[indice].nome = Console.ReadLine()!;
         Console.WriteLine("Digite a nova idade:");
