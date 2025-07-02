@@ -25,6 +25,23 @@ class Program
         Console.WriteLine("Pessoa cadastrada com sucesso!");
 
     }
+
+    static void Listar(Pessoa[] pessoas, int quantidadesPessoas)
+    {
+        if (quantidadePessoas == 0)
+        {
+            Console.WriteLine("Nenhuma Pessoa Cadastrada");
+            return;
+        }
+        else
+        {
+            for (int i = 0; i < quantidadePessoas; i++)
+            {
+                Pessoa p = pessoas[i];
+                Console.WriteLine($"Nome:{p.nome} Idade: {p.idade}");
+            }
+        }  
+    }
     static void Main(string[] args)
     {
         int op;
