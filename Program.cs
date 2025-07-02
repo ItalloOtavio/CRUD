@@ -4,7 +4,7 @@ namespace CRUD;
 class Program
 {
     static Pessoa[] pessoas = new Pessoa[10];
-        static int quantidadePessoas = 0;
+    static int quantidadePessoas = 0;
 
     // Cadastrar pessoas
 
@@ -44,7 +44,35 @@ class Program
                 Pessoa p = pessoas[i];
                 Console.WriteLine($"ID:{p.id}Nome:{p.nome} Idade: {p.idade}");
             }
-        }  
+        }
+    }
+
+    static void Atualizar()
+    {
+        Console.WriteLine("Digite o ID da pessoa que deseja atualizar:");
+        int id = int.Parse(Console.ReadLine()!);
+
+        int indice = -1;
+
+        for (int i = 0; i < quantidadePessoas; i++)
+        {
+            if (pessoas[i].id == id)
+            {
+                indice = i;
+                break;
+            }
+        }
+        if (indice == -1)
+        {
+            Console.WriteLine("Pessoa não encontrada");
+            return;
+        }
+
+        Console.WriteLine("Digite o novo nome:");
+        pessoas[indice].nome = Console.ReadLine()!;
+        Console.WriteLine("Digite a nova idade:");
+        pessoas[indice].idade = int.Parse(Console.ReadLine()!);
+        Console.WriteLine("Pessoa atualizada com sucesso!");
     }
     static void Main(string[] args)
     {
