@@ -74,6 +74,37 @@ class Program
         pessoas[indice].idade = int.Parse(Console.ReadLine()!);
         Console.WriteLine("Pessoa atualizada com sucesso!");
     }
+
+    static void Remover()
+    {
+        Console.WriteLine("Digite o id da pessoa que deseja remover:");
+        int id = int.Parse(Console.ReadLine()!);
+
+        int indice = -1;
+
+        for (int i = 0; i < quantidadePessoas; i++)
+        {
+            if (pessoas[i].id == id)
+            {
+                indice = i;
+                break;
+            }
+        }
+        if (indice == -1)
+        {
+            Console.WriteLine("Pessoa não encontrada.");
+            return;
+        }
+
+        for (int i = indice; i < quantidadePessoas - 1; i++)
+        {
+            pessoas[i] = pessoas[i + 1];
+        }
+        pessoas[quantidadePessoas - 1] = null;
+        quantidadePessoas--;
+
+        Console.WriteLine("Pessoa removida com sucesso!");
+    }
     static void Main(string[] args)
     {
         int op;
