@@ -30,7 +30,7 @@ class Program
 
     }
 
-    static void Listar(Pessoa[] pessoas, int quantidadesPessoas)
+    static void Listar()
     {
         if (quantidadePessoas == 0)
         {
